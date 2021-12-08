@@ -1,0 +1,28 @@
+1. Display a list of all data contained in the BOOKS table.
+
+SELECT *
+FROM BOOKS;
+
+
+2. List the title and publication date for each book in the BOOKS table. 
+Use the column heading “Publication Date” for the Pubdate field.
+
+SELECT TITLE, PUBDATE as "PUBLICATION DATE"
+FROM BOOKS;
+
+
+3. Create a list containing the publisher’s name, 
+the person usually contacted, and the publisher’s telephone number. 
+Rename the contact column “Contact Person” in the 
+displayed results. (Hint: Use the PUBLISHER table.)
+
+SELECT UNIQUE NAME, PHONE, CONTACT as "CONTACT PERSON"
+FROM PUBLISHER, BOOKS;
+
+
+4. List the customer number from the ORDERS table for each customer
+who has placed an order with the bookstore. List each customer number only once.
+
+SELECT UNIQUE CUSTOMER#
+FROM ORDERS;
+
