@@ -1,0 +1,49 @@
+1. Which orders shipped after April 1, 2009? 
+List each order number and the date it shipped.
+
+SELECT ORDER#, SHIPDATE
+FROM ORDERS
+WHERE SHIPDATE > '04/01/2009'
+
+
+
+2. Which customers live in Georgia or New Jersey? 
+Put the results in ascending order by last name.
+List each customer’s customer number, last name, and state. 
+
+SELECT customer#, lastname, state
+FROM customers
+WHERE state = 'GA' or state = 'NJ'
+ORDER BY lastname;
+
+3. List all authors whose last name contains the letter pattern “IN.”
+Put the results in order of last name, then first name. 
+List each author’s last name and first name.
+
+SELECT LNAME, FNAME
+FROM AUTHOR
+WHERE LNAME LIKE '%IN%'
+ORDER BY LNAME;
+
+
+4. Display the book title and category for all books in the 
+Children and Cooking categories. Create three different queries to accomplish this task: 
+a) a search pattern operation, b) a
+logical operator, and c) another operator not used in a or b
+
+SELECT TITLE, CATEGORY
+FROM BOOKS
+WHERE CATEGORY = 'COOKING' OR CATEGORY = 'CHILDREN'
+
+SELECT TITLE, CATEGORY
+FROM BOOKS
+WHERE CATEGORY LIKE 'COO%'
+OR CATEGORY LIKE 'CHI%'
+
+5. List the title and publish date of any computer book published in 2005. 
+
+SELECT TITLE, PUBDATE
+FROM BOOKS
+WHERE CATEGORY = 'COMPUTER'
+AND PUBDATE BETWEEN '01/01/2005' AND '12/31/2005'
+
